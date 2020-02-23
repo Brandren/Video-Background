@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Video Background</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Vidaloka';
+  font-size: 17px;
+  overflow: hidden;
+}
+
+#myVideo {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  max-width: 100%;
+  padding: 20px;
+  text-align: justify-all;
+}
+
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+
+footer h4{
+	color: white;
+	position: absolute;
+	bottom: 3%;
+	left:  5%;
+	padding: 0;
+	margin: 0;
+}
+
+</style>
+</head>
+<body>
+<video autoplay muted loop id="myVideo">
+  <source src="clock.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<div class="content">
+  <h1>Video Background</h1>
+  <p>Stop the video background...</p>
+  <button id="myBtn" onclick="myFunction()">Pause</button>
+</div>
+
+<footer>
+	<h4>&copy Ng Jing Ping | Video Background | 13 February 2020</h4>
+</footer>
+
+<script>
+var video = document.getElementById("myVideo");
+var btn = document.getElementById("myBtn");
+
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+</script>
+
+</body>
+</html>
